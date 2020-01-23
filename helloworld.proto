@@ -1,0 +1,17 @@
+// python -m grpc_tools.protoc -I. --python_out=./base_package --grpc_python_out=./base_package ./helloworld.proto
+
+
+syntax = "proto3";
+
+service Greeter {
+    rpc SayHello(HelloRequest) returns (HelloReply) {}
+    rpc SayHelloAgain(HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloReply {
+    string message = 1;
+}
